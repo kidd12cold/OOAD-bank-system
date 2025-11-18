@@ -1,0 +1,46 @@
+import javax.swing.*;
+
+public class LoginGUI extends JFrame {
+
+    public LoginGUI() {
+        // --- WINDOW SETTINGS ---
+        setTitle("Log-In");
+        setSize(350, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);   // center on screen
+        setLayout(null);               // absolute layout for simplicity
+
+        // --- LABELS ---
+        JLabel userLabel = new JLabel("Username:");
+        userLabel.setBounds(20, 20, 100, 25);
+        add(userLabel);
+
+        JLabel passLabel = new JLabel("Password:");
+        passLabel.setBounds(20, 60, 100, 25);
+        add(passLabel);
+
+        // --- INPUT FIELDS ---
+        JTextField usernameField = new JTextField();
+        usernameField.setBounds(120, 20, 150, 25);
+        add(usernameField);
+
+        JPasswordField passwordField = new JPasswordField();
+        passwordField.setBounds(120, 60, 150, 25);
+        add(passwordField);
+
+        // --- BUTTONS ---
+        JButton loginButton = new JButton("Log-In");
+        loginButton.setBounds(50, 110, 100, 30);
+        add(loginButton);
+
+        JButton signupButton = new JButton("Sign-Up");
+        signupButton.setBounds(170, 110, 100, 30);
+        add(signupButton);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new LoginGUI();
+    }
+}
