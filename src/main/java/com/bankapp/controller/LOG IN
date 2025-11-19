@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.bankapp.controller.LoginController"
+            prefWidth="450" prefHeight="500"
+            style="-fx-background-color: linear-gradient(to bottom right, #0b486b, #f56217);">
+
+    <children>
+        <VBox alignment="CENTER" spacing="20" prefWidth="350" layoutX="50" layoutY="80"
+              style="-fx-background-color: white; 
+                     -fx-background-radius: 15; 
+                     -fx-padding: 40; 
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0, 0, 6);">
+
+         
+            <Label text="Log-In"
+                   style="-fx-font-size: 28px; 
+                          -fx-font-weight: bold; 
+                          -fx-text-fill: #0b486b;"/>
+
+       
+            <Label text="Welcome back! Please log in to continue."
+                   style="-fx-font-size: 14px; 
+                          -fx-text-fill: #666666;"/>
+
+           
+            <TextField fx:id="usernameField" promptText="Username"
+                       prefWidth="250" prefHeight="40"
+                       style="-fx-background-radius: 10;
+                              -fx-padding: 0 10;
+                              -fx-font-size: 14px;"/>
+
+   
+            <PasswordField fx:id="passwordField" promptText="Password"
+                           prefWidth="250" prefHeight="40"
+                           style="-fx-background-radius: 10;
+                                  -fx-padding: 0 10;
+                                  -fx-font-size: 14px;"/>
+
+          
+            <Button fx:id="loginButton" text="Log-In"
+                    prefWidth="250" prefHeight="45"
+                    style="-fx-background-color: #0b486b; 
+                           -fx-text-fill: white; 
+                           -fx-font-size: 16px; 
+                           -fx-background-radius: 10;
+                           -fx-font-weight: bold;"
+                    onAction="#handleLogin"/>
+
+        
+            <Button fx:id="signupButton" text="Sign-Up"
+                    prefWidth="250" prefHeight="45"
+                    style="-fx-background-color: #f56217; 
+                           -fx-text-fill: white; 
+                           -fx-font-size: 16px; 
+                           -fx-background-radius: 10;
+                           -fx-font-weight: bold;"
+                    onAction="#handleSignup"/>
+
+       
+
+        </VBox>
+    </children>
+
+</AnchorPane>
