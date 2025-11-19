@@ -1,2 +1,0 @@
-# OOAD-bank-system
-assignment
