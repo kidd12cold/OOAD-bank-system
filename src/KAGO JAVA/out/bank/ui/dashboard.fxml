@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bank.ui.controller.DashboardController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to bottom right, #0b486b, #f56217);">
+    <children>
+        <BorderPane prefWidth="820" prefHeight="520" layoutX="40" layoutY="40"
+                    style="-fx-background-color: white; -fx-background-radius: 18; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 18, 0, 0, 8);">
+            <top>
+                <HBox alignment="CENTER_LEFT" spacing="10" BorderPane.alignment="CENTER">
+                    <Label fx:id="headerLabel"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0b486b;"/>
+                </HBox>
+            </top>
+            <center>
+                <VBox spacing="10" BorderPane.alignment="CENTER">
+                    <Label text="Your Accounts"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0b486b;"/>
+                    <TableView fx:id="accountTable" prefHeight="180">
+                        <columns>
+                            <TableColumn fx:id="accountNumberColumn" text="Account Number" prefWidth="200"/>
+                            <TableColumn fx:id="accountTypeColumn" text="Type" prefWidth="140"/>
+                            <TableColumn fx:id="accountBalanceColumn" text="Balance" prefWidth="140"/>
+                        </columns>
+                    </TableView>
+                    <Label text="Statement"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0b486b;"/>
+                    <TableView fx:id="transactionTable" prefHeight="180">
+                        <columns>
+                            <TableColumn fx:id="txnDateColumn" text="Date" prefWidth="180"/>
+                            <TableColumn fx:id="txnTypeColumn" text="Type" prefWidth="100"/>
+                            <TableColumn fx:id="txnAmountColumn" text="Amount" prefWidth="120"/>
+                            <TableColumn fx:id="txnBalanceColumn" text="Balance" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                    <Label fx:id="messageLabel" text="Select an account to view statements."
+                           style="-fx-text-fill: #f56217;"/>
+                </VBox>
+            </center>
+            <right>
+                <VBox spacing="10" prefWidth="220" BorderPane.alignment="CENTER">
+                    <Button text="Deposit" onAction="#handleDeposit"
+                            style="-fx-background-color: #0b486b; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    <Button text="Withdraw" onAction="#handleWithdraw" fx:id="withdrawButton"
+                            style="-fx-background-color: #276678; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    <Button text="View Statement" onAction="#handleStatement"
+                            style="-fx-background-color: #f56217; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    <Button text="Create New Account" onAction="#handleCreateAccount"
+                            style="-fx-background-color: #0b486b; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    <Button text="Run Monthly Interest" onAction="#handleApplyInterest"
+                            style="-fx-background-color: #276678; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    <Button text="Audit Snapshot Report" onAction="#handleAudit"
+                            style="-fx-background-color: #f56217; -fx-text-fill: white; -fx-background-radius: 8;"/>
+                    <Button text="Logout" onAction="#handleLogout"
+                            style="-fx-background-color: transparent; -fx-text-fill: #0b486b; -fx-font-weight: bold;"/>
+                </VBox>
+            </right>
+        </BorderPane>
+    </children>
+</AnchorPane>
+
